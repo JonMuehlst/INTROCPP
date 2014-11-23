@@ -1,4 +1,4 @@
-MAINNAME= functions
+MAINNAME= class4_linear_functions_binom_unit_testing
 
 ##########################################################
 # sources files
@@ -66,5 +66,3 @@ valgrindinstall:
 
 
 # DO NOT DELETE THIS LINE -- make depend depends on it.
-
-functions.o: functions.h

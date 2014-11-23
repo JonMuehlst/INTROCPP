@@ -16,6 +16,10 @@ int main(){
     increment();
     increment();
     
+    nonStaticIncrement();
+    nonStaticIncrement();
+    nonStaticIncrement();
+    
     staticDemo a = staticDemo();
     staticDemo b = staticDemo();
     staticDemo c = staticDemo();
@@ -71,3 +75,12 @@ void increment(){
     counter++;
     
 }
+
+void nonStaticIncrement(){
+    
+    int counter = 0;
+    cout << "The value of the non static counter is: " << counter << std::endl;
+    counter++;
+    
+}
+

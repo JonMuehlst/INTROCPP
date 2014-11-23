@@ -5,6 +5,7 @@ extern int GLOBAL_VARIABLE;
 // extern int FILE_GLOBAL_VARIABLE;
 
 void increment();
+void nonStaticIncrement();
 
 class staticDemo{
     

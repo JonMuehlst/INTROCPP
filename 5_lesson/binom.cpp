@@ -1,9 +1,9 @@
 #include <iostream>
 #include <assert.h>
 #include "gtest/gtest.h"
+#include "binom.h"
 
-int binom(int,int);
-int binomIterative(int,int);
+/* 
 
 int main(int argc, char **argv){
     
@@ -15,6 +15,8 @@ int main(int argc, char **argv){
     return RUN_ALL_TESTS();
     
 }
+
+*/
 
 int binom(int n, int k){
     

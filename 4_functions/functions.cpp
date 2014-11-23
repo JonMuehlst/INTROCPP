@@ -5,13 +5,14 @@
 
 float division(int a, int b){
     
+    // נוודא שאנחנו לא מחלקים באפס
     assert(b != 0);
     
     return a/b;
     
 }
 
-
+// הפונקציה מחזירה את האיבר המבוקש בסדרת פיבונצ'י
 int fibonacci(int n){
     
     assert( n >= 0);
@@ -50,7 +51,7 @@ int fibonacciLoop(int n){
     
 }
 
-
+// הפונקציה מקבלת נקודה במישור ובודקת אם היא בתוך מעגל נתון
 bool inCircle(float center_x, float center_y, float radius, float x, float y){
     
     float ans = (x - center_x)*(x - center_x) + (y - center_y)*(y - center_y);
@@ -63,6 +64,7 @@ bool inCircle(float center_x, float center_y, float radius, float x, float y){
     
 }
 
+// בדיקת שווין בין שני משתנים ממשיים
 bool floatEquality(float a, float b, float eps){
     
     float ans = a-b;
@@ -89,7 +91,19 @@ bool floatEquality(float a, float b, float eps){
 // 
 // ==========================================================================================
 
+// מידע נוסף על העבודה עם גוגל טסט אפשר למצא בקישור הבא:
+// https://code.google.com/p/googletest/wiki/Primer
 
+// במקרה הפרטי שלנו אפשר להריץ את הבדיקות ע"י הפקודה
+// make
+// בתוך ה
+// bash
+
+// Test case: Functions
+// Test name: division
+// שימו לב בשימוש ב
+// EXPECT_DOUBLE_EQ(EXPECTED_VALUE, ACTUAL VALUE)
+// שמתאים לשימוש עם פונקציות שמחזירות ערך ממש
 TEST(Functions, division){
 
     EXPECT_DOUBLE_EQ(3,division(9,3));
@@ -100,7 +114,9 @@ TEST(Functions, division){
 
 TEST(Functions, fibonacci){
 
+    // פה הבדיקה מצפה שהאיבר התשיעי של סדרת פיבונצ'י יהיה 34
     EXPECT_EQ(34, fibonacci(9));
+    // פה הבדיקה מצפה שהאיבר התשיעי של סדרת פיבונצ'י _לא_ יהיה 55
     EXPECT_NE(55, fibonacci(9));
     EXPECT_EQ(34, fibonacciLoop(9));
     EXPECT_NE(55, fibonacciLoop(9));
@@ -110,7 +126,11 @@ TEST(Functions, fibonacci){
 
 TEST(Functions, inCircle){
 
+    // מצפים שהפונקציה תחזיר אמת עבור הנקודה 
+    // (1,0)
     EXPECT_TRUE(inCircle(0,0,1,1,0));
+    // מצפים שהפונקציה תחזיר שקר עבור הנקודה
+    // (1,2)
     EXPECT_FALSE(inCircle(0,0,1,1,2));
     
 }
