@@ -1,6 +1,8 @@
 #include <iostream>
+#include <assert.h>
 
 int binom(int,int);
+int binomIterative(int,int);
 
 int main(){
     
@@ -12,6 +14,8 @@ int main(){
 
 int binom(int n, int k){
     
+    assert( (n >= 0) && (k >= 0) );    
+    
     if( n < k)
         return 0;
     if( (n == k) || (k == 0) )
@@ -20,3 +24,6 @@ int binom(int n, int k){
     return binom(n-1,k) + binom(n-1,k-1);
     
 }
+
+
+    
