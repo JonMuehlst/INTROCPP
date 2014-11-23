@@ -1,14 +1,18 @@
 #include <iostream>
 #include <assert.h>
+#include "gtest/gtest.h"
 
 int binom(int,int);
 int binomIterative(int,int);
 
-int main(){
+int main(int argc, char **argv){
     
     int n = 5, k = 3, ans = 0;
     ans = binom(n,k);
     std::cout << "n choose k equals: " << ans << std::endl;
+    
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
     
 }
 
@@ -26,4 +30,17 @@ int binom(int n, int k){
 }
 
 
+/*================================================================================
+
+                                    Tests
+
+================================================================================*/
+
+TEST(Binom, binom){
     
+    EXPECT_EQ(10, binom(5,3));
+    EXPECT_EQ(15, binom(6,2));
+    EXPECT_NE(15, binom(5,3));
+    
+    
+}
