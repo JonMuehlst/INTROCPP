@@ -8,7 +8,7 @@ int stringLength(char*);
 void printArray(int*, size_t);
 void fillArrayRandomly(int*,size_t);
 int getMax(int*,size_t);
-int * find(int*,size_t,int);
+bool find(int*,size_t,int);
 
 
 #endif

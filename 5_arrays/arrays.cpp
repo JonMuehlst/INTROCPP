@@ -98,14 +98,15 @@ int getMax(int * a, size_t a_size){
 	
 }
 
-int * find(int * a, size_t a_size, int num){
+bool find(int * a, size_t a_size, int num){
     
+    bool ans = false;
     
 	for (size_t i = 0; i < a_size; i++)
 		if (a[i] == num)
-			return &a[i];
+		    ans = true;
 	
-	return NULL;
+	return ans;
 }
 
 
@@ -158,10 +159,7 @@ TEST(Arrays, find_num){
     
     int a[] = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 100 };
     
-    int * ans = find(a, 10, 5);
-    EXPECT_TRUE(5 == *ans);
-    
-    ans = find(a, 10, 75);
-    EXPECT_TRUE(NULL == ans);
+    EXPECT_TRUE(find(a, 10, 5));
+    EXPECT_FALSE(find(a, 10, 75));
     
 }
