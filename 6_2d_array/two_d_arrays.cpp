@@ -133,16 +133,12 @@ bool isMatSymmetric(int arr[][ARR_COLS], size_t rows, size_t cols){
     bool flag = true;
     
     for (size_t i = 0; i < rows; ++i) {
-		for (size_t j = 0; j < cols; ++j) {
-			if( i == j ){
-			    continue;
-			} else {
-			    if(arr[i][j] != arr[j][i]){
-			        flag = false;
-			    }
-			}
-		}
-	}
+		for (size_t j = 0; j < i; ++j) {
+		    if(arr[i][j] != arr[j][i]){
+		        flag = false;
+		    }
+	    }
+    }
 	
 	return flag;
     
