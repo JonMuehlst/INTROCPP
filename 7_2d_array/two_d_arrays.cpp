@@ -65,6 +65,7 @@ int isFlower( int ** a,size_t i,size_t j){
 }
 
 // Matrices are NxN
+// Multiply a x b and store the result in c
 void multiplyMatrix(int ** a, int ** b, int ** c,size_t N){
     
     int sum = 0;
